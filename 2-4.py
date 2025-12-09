@@ -35,7 +35,7 @@ list1 = ["sofia", "kitty", "apple"]
 print("List:", list1)
 tuple1 = tuple(list1)
 print("Tuple:", tuple1)
-#%% 2d tuple
+#%% 2D tuple
 fruits=(("香蕉",34,2),("芭樂",28,3),("水梨",50,2))
 print("品名\t\t數量\t\t單價\t\t小計")
 total_price=0
@@ -44,3 +44,57 @@ for i in fruits:
     total_price+=price*count
     print(f"{name}\t\t{count}\t\t{price}\t\t{count*price}")
 print(f"總計\t\t\t\t\t\t{total_price}")
+#%% Dict
+dictionary={'name':'EliasChen','age':15,'gay':True}
+print(dictionary)
+print(dictionary['age'])
+dictionary['name']='yikai'
+print(dictionary['name'])
+del dictionary['name']
+print(dictionary)
+dictionary['love_kitten']=True
+print(dictionary)
+# print(dictionary['meow'])
+print(dictionary.get("meow"))
+print(dictionary.get("meow","Not Found QQ"))
+print('age' in dictionary)
+# del dictionary
+# print(dictionary)
+#%% Dict convert
+list1=[['name','elias'],['age',15],['love_kitten',True]]
+dict1=dict(list1)
+print(list1)
+print(dict1)
+#%% create dict with fromkeys
+dict3=dict.fromkeys(('name','age'),15)
+print(dict3)
+#%% dict get: keys, values, items
+dictionary={'name':'EliasChen','age':15,'gay':True}
+print(dictionary.keys())
+print(dictionary.values())
+print(dictionary.items())
+#%% dict update
+dict1={'name':'EliasChen','age':15,'gay':True}
+dict2={'fav_animal':'meow','fav_num':10}
+print(dict1)
+dict1.update(dict2)
+print(dict1)
+dict1.clear()
+print(dict1)
+#%% dict pratice
+def show_res():
+    print(f'貨號:{id} 品名:{data[id][0]} 售價:{data[id][1]}')
+data={
+    'A001':['汽水',25],
+    'A005':['公主麵',10],
+    'A006':['口香糖',8],
+    'A003':['冰糖',20]      
+}
+id=input("請輸入貨號: ")
+if id not in data.keys():
+    print(f'貨號:{id} 不存在')
+    name=input("請輸入品名:")
+    price=int(input("請輸入售價:"))
+    data[id]=[name,price]
+    print(data)
+show_res()
