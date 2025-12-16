@@ -98,3 +98,46 @@ if id not in data.keys():
     data[id]=[name,price]
     print(data)
 show_res()
+#%% dict pratice
+people={}
+total=int(input("請決定人數: "))
+for i in range(1,total+1):
+    name=input(f'請輸入第{i}位姓名: ')
+    people[name]=input(f'請輸入第{i}位電話: ')
+req=input('請輸入要查詢的電話的姓名: ')
+if req in people:
+    print(f'{req}的電話號碼是{people[req]}')
+#%% set
+set1={'banana','banana'}
+print(set1)
+print(set('banana'))
+dict2={'fav_animal':'meow','fav_num':10}
+print(set(dict2))
+set1.add('apple')
+set1.add('orange')
+print(set1)
+set1.remove('apple')
+print(set1)
+set1.discard("orange") # include error handling
+print(set1)
+set1.update({'meow','kitty'})
+print(set1)
+set1.pop()
+print(set1)
+set1.pop()
+print(set1)
+#%% 集合應用
+g1=['林二','王一','張三','趙六','王一','李四','張三','陳五']
+g2=['鄭十','趙六','劉千','廖八','柯七','張三','王一','呂九','柯七','蔡百']
+hot=set(g1)
+pop=set(g2)
+print(hot)
+print(f"熱門音樂社名單人數:{len(g1)}\t\t正確人數:{len(hot)}\n")
+print(pop)
+print(f"流行音樂社名單人數:{len(g2)}\t\t正確人數:{len(pop)}\n")
+print(f'重複加社名單: {hot&pop}')
+merge=hot|pop
+print(f'合併後社團名單: {merge}')
+print(f'合併後社團人數: {len(merge)}')
+print(f'只單獨在流行音樂社的名單: {pop-hot}')
+print(f'只單獨在熱門音樂社或流行音樂社的名單: {pop^hot}')
